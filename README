@@ -26,4 +26,9 @@ Authorization: Basic [some auth hash]
 
 as well.
 
+To see location of users use the following new route defined by this module:
+http://drupaldemo.com/where_they_are/admin for example...
+
+(Route is http://drupaldemo.com/where_they_are/{username})
+
 Enjoy!
