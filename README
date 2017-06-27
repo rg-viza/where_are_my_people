@@ -1,0 +1,17 @@
+README
+
+Step 1: Create new google maps API key at https://console.developers.google.com/apis/credentials and add it to templates/map.html.twig template replacing YOUR_GOOGLE_MAPS_API_KEY string with your key
+Step 2: git clone to ../modules/custom directory under web root of drupal
+Step 3: Enable module in Drupal 8
+Step 4: Go to Configuration | Rest UI and enable API Routes
+Step 5: Point location app at your server and send a json payload via POST such as:
+{
+  "username":"admin",
+  "long":-86.5537833,
+  "lat":29.283338
+}
+To http://[www.yoursever.com]/where_are_my_people?_format=json
+You will need to send the following headers along with payload:
+X-CSRF-Token: [valid session ID]
+Content-Type: application/json
+
