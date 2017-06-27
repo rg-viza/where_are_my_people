@@ -1,0 +1,7 @@
+## YAML Template.
+---
+name: Where Are My People?
+description: Defines a REST Resource for locations of people to be updated
+package: Location
+type: module
+core: 8.x

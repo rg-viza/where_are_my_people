@@ -1,0 +1,27 @@
+uuid: 9260509b-65e2-4b02-8cd3-4e01b40887d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_current_latitude
+  module:
+    - user
+  enforced:
+    module:
+      - where_are_my_people
+id: user.field_current_latitude
+field_name: field_current_latitude
+entity_type: user
+bundle: user
+label: 'Current Latitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

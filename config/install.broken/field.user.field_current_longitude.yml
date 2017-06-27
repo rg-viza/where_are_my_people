@@ -1,0 +1,27 @@
+uuid: f0c9e4bc-3019-41a0-8045-28a28f531115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_current_longitude
+  module:
+    - user
+  enforced:
+    module:
+      - where_are_my_people
+id: user.field_current_longitude
+field_name: field_current_longitude
+entity_type: user
+bundle: user
+label: 'Current Longitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float
