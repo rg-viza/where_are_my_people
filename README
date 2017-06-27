@@ -6,7 +6,7 @@ Android app coming soon (or possibly a link to an existing android app)!
 
 Step 1: Create new google maps API key at https://console.developers.google.com/apis/credentials and add it to templates/map.html.twig template replacing YOUR_GOOGLE_MAPS_API_KEY string with your key
 Step 2: git clone to ../modules/custom directory under web root of drupal
-Step 3: Enable "Where are my people?,  REST UI, RESTful Web services and Serialization modules in Drupal 8
+Step 3: Enable "Where are my people?",  REST UI, RESTful Web services and Serialization modules in Drupal 8
 Step 4: Go to Configuration | Rest UI and enable API Routes. Select all checkboxes.
 Step 5: Point location app at your server and send a json payload via POST such as:
 {
