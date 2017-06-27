@@ -1,0 +1,12 @@
+<?php
+function where_are_my_people_theme($existing, $type, $theme, $path) {
+    return [
+        'map_template' => [
+            'variables' => [
+                'latitude' => NULL,
+                'longitude' => NULL,
+                'username' => NULL,
+            ],
+        ],
+    ];
+}

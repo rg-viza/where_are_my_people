@@ -4,8 +4,8 @@ namespace Drupal\where_are_my_people\Plugin\rest\resource;
 
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
-use Drupal\rest\RequestHandler;
-use Drupal;
+//use Drupal\rest\RequestHandler;
+//use Drupal;
 /**
  * Provides a Resource
  *
@@ -34,11 +34,19 @@ class WhereMyPeopleAre extends ResourceBase {
   
   //set location POST
   public function post(array $data) {
-    $user = user_load_by_name($data['username']);
-    $user->set('field_current_longitude', $data['long']);
-    $user->set('field_current_latitude', $data['lat']);
-    $user->save();
-    $message = "Location updated successfully.";
+    $user = user_load_by_name($data['username']);      
+    if($user && is_float((double)$data['long']) && is_float((double)$data['lat'])){
+        $user->set('field_current_longitude', $data['long']);
+        $user->set('field_current_latitude', $data['lat']);
+        $user->save();
+        $message = "Location updated successfully.";
+    }
+    elseif(!$user){
+        $message = "User not found.";
+    }
+    elseif(!is_float((double)$data['long']) || !is_float((double)$data['lat'])){
+        $message = "Location data is invalid";
+    }
     $response = ['message' => $message];
     return new ResourceResponse($response);
   }
