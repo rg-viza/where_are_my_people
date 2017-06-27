@@ -1,4 +1,8 @@
 README
+Purpose: Enables updating a user location in drupal to show their location on a map. Designed to be used in conjunction with a Android
+or iPhone app that POSTs longitude and latitude at your drupal server's REST API (instructions below) to update a user's location
+
+Android app coming soon (or possibly a link to an existing android app)!
 
 Step 1: Create new google maps API key at https://console.developers.google.com/apis/credentials and add it to templates/map.html.twig template replacing YOUR_GOOGLE_MAPS_API_KEY string with your key
 Step 2: git clone to ../modules/custom directory under web root of drupal
