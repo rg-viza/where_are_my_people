@@ -1,4 +1,4 @@
-uuid: f0c9e4bc-3019-41a0-8045-28a28f531115
+uuid: 5c19a1ed-d16e-4dcd-89ef-346334aea49a
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,11 @@ dependencies:
     - field.storage.user.field_current_longitude
   module:
     - user
+    - where_are_my_people
   enforced:
-    module:
-      - where_are_my_people
-id: user.field_current_longitude
+     module:
+        - where_are_my_people
+id: user.user.field_current_longitude
 field_name: field_current_longitude
 entity_type: user
 bundle: user
@@ -24,4 +25,4 @@ settings:
   max: null
   prefix: ''
   suffix: ''
-field_type: float
+field_type: decimal

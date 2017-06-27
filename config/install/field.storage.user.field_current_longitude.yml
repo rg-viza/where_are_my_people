@@ -1,0 +1,24 @@
+uuid: 1a50c962-5c7c-47ad-a89f-a207f8d55753
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+    - where_are_my_people
+  enforced:
+     module:
+        - where_are_my_people
+id: user.field_current_longitude
+field_name: field_current_longitude
+entity_type: user
+type: decimal
+settings:
+  precision: 10
+  scale: 7
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

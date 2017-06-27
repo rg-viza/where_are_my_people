@@ -1,4 +1,4 @@
-uuid: 9260509b-65e2-4b02-8cd3-4e01b40887d2
+uuid: 6399a326-7036-4eba-87ea-c94cd56c479a
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,11 @@ dependencies:
     - field.storage.user.field_current_latitude
   module:
     - user
+    - where_are_my_people
   enforced:
-    module:
-      - where_are_my_people
-id: user.field_current_latitude
+     module:
+        - where_are_my_people
+id: user.user.field_current_latitude
 field_name: field_current_latitude
 entity_type: user
 bundle: user
@@ -24,4 +25,4 @@ settings:
   max: null
   prefix: ''
   suffix: ''
-field_type: float
+field_type: decimal
