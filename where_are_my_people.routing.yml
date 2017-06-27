@@ -3,12 +3,13 @@ where_they_are:
   path: '/where_they_are'
   defaults:
     _controller: '\Drupal\where_are_my_people\Controller\WhereMyPeopleAreController::basic'
-    _title: 'My first page in D8'
+    _title: 'Where are my people?'
   requirements:
     _permission: 'access content'
 where_they_are_arguments:
   path: '/where_they_are/{username}'
   defaults:
     _controller: '\Drupal\where_are_my_people\Controller\WhereMyPeopleAreController::showMap'
+    _title: 'Where are my people?'
   requirements:
     _permission: 'access content'
