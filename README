@@ -43,14 +43,14 @@ Authorization: Basic [some auth hash]
 as well.
 
 To see location of users use the following new route defined by this module:
-http://drupaldemo.com/where_they_are/admin for example
+http://[www.yoursever.com]/where_they_are/admin for example
 
-(Route is http://drupaldemo.com/where_they_are/{username})
+(Route is http://[www.yoursever.com]/where_they_are/{username})
 I have also included a REST API call for getting a user's location, in case you want to integrate this location data into another application:
 http://[www.yoursever.com]/where_are_my_people/{drupal username}?_format=json
 example:
 
-To http://www.yoursever.com/where_are_my_people/admin?_format=json
+To http://[www.yoursever.com]/where_are_my_people/admin?_format=json
 
 returns:
 {
