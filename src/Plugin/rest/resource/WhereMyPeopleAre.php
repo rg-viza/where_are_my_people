@@ -81,12 +81,29 @@ class WhereMyPeopleAre extends ResourceBase {
       //$this->repoUserLocation = $repoUserLocation;
      $this->setRepoUserLocation(new UserLocationRepository());
   }
-  
+  /*
+   * @todo Once I understand DIC and get injection working correctly get rid of this hack...
+   */
   public function setRepoUserLocation(UserLocationRepositoryInterface $repoUserLocation)
   {
       $this->repoUserLocation = $repoUserLocation;
   }
  
+  /**
+   * @todo: fix this static function def so the dependency injection doesn't require an ugly hack.
+   * 
+  
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->getParameter('serializer.formats'),
+      $container->get('logger.factory')->get('rest'),
+      $container->get('where_are_my_people.user_location')
+    );
+  } 
+   */
   //get location GET
   public function get(String $username) {
     $response = ['location' => $this->repoUserLocation->getLocation($username)];
