@@ -15,7 +15,7 @@ Copyright 2017 Neil Paul Davis Jr
 ##    You should have received a copy of the GNU General Public License
 ##    along with Where are my people?.  If not, see <http://www.gnu.org/licenses/>.
 
-To Do: Move the calls to get data out of the user object out of the controllers, and into a service. (in progress)
+To Do: figure out Drupal 8's DIC, properly inject my dependencies, and get rid of that embarrasing hack I used as a bandaid for my lack of knowledge of Symfony's DIC
 
 README
 Warning: I built this by day 4 of learning Drupal 8. I have Drupal 6/7 experience but Drupal 8 is a whole lot different, as far as coding goes :-) 
