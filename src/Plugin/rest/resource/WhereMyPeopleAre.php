@@ -88,7 +88,7 @@ class WhereMyPeopleAre extends ResourceBase {
   }
  
   /**
-   * @todo: fix this static function def so the dependency injection doesn't require an ugly hack
+   * @todo: fix this static function def so the dependency injection doesn't require an ugly hack.
   
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
