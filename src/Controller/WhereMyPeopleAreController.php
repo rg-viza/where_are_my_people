@@ -19,9 +19,9 @@
     along with Where are my people?.  If not, see <http://www.gnu.org/licenses/>.
  */
 namespace Drupal\where_are_my_people\Controller;
-
+use Drupal\where_are_my_people\UserLocationRepository;
+use Drupal\where_are_my_people\UserLocationRepositoryInterface;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Entity;
 /**
  * Provides route responses for the Example module.
  */
@@ -35,6 +35,35 @@ class WhereMyPeopleAreController extends ControllerBase {
    *     "canonical" = "/where_my_people_are/{username}"
    *   }
    */
+  protected $repoUserLocation;
+  
+  /*
+   * @todo figure out the DIC container and fix this so I don't need to hack my dependency injection by calling a setter from the constructor... 
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('where_are_my_people.user_location')
+    );
+  }
+   * 
+   */
+  public function __construct(){
+        /*
+   * @todo Learn Drupal 8's DIC and fix this!
+   * This is an ugly hack resulting from my lack of knowledge about Drupal 8's DIC. 
+   */
+      $this->setRepoUserLocation(new UserLocationRepository());
+  }
+  /*
+   * @todo Learn Drupal 8's DIC and fix this!
+   * This is an ugly hack resulting from my lack of knowledge about Drupal 8's DIC. 
+   * this function will be dying a horrible death!
+   */
+  public function setRepoUserLocation(UserLocationRepositoryInterface $repoUserLocation){
+      $this->repoUserLocation = $repoUserLocation;   
+  }
   public function basic() {
     $element = array(
       '#markup' => 'Provide a username at end of url to see map',
@@ -43,18 +72,11 @@ class WhereMyPeopleAreController extends ControllerBase {
   }
   public function showMap(String $username)
   {
-    /*
-    $element = array(
-      '#markup' => "Here is a map for {$username}",
-              
-    );
-     * 
-     */
-    $user =  user_load_by_name($username);
+    $arrLocation = $this->repoUserLocation->getLocation($username);
     return [
         '#theme' => 'map_template',
-        '#latitude' => $user->get('field_current_latitude')->value,
-        '#longitude' => $user->get('field_current_longitude')->value,
+        '#latitude' => $arrLocation['latitude'],
+        '#longitude' => $arrLocation['longitude'],
         '#username' => $username
     ];
   }

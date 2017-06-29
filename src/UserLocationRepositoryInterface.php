@@ -1,4 +1,5 @@
-<!--
+<?php
+namespace Drupal\where_are_my_people;
 /*
     Copyright 2017 Neil Paul Davis Jr
    
@@ -16,24 +17,14 @@
 
     You should have received a copy of the GNU General Public License
     along with Where are my people?.  If not, see <http://www.gnu.org/licenses/>.
+ * 
  */
--->
-    <h3>Where {{ username }} is:</h3>
-    <div id="map" style='height:500px;width:800px;'></div>
-    <script>
-        //This function stolen directly from the google maps example in the maps api documentation, I'll spruce it up a bit one day
-      function initMap() {
-        var uluru = {lat: {{latitude}}, lng: {{longitude}}};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVJWlfr1kTu3y5yRp2bcRuXyg9Qcm6BJI&callback=initMap">
-    </script>
+
+/**
+ *
+ * @author ndavis
+ */
+interface UserLocationRepositoryInterface {
+    public function getLocation($username);
+    public function setLocation($username, $longitude, $latitude);
+}

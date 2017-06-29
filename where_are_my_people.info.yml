@@ -17,7 +17,7 @@
 ##
 ---
 name: Where Are My People?
-description: Defines a REST Resource for locations of people to be updated
+description: Provides a REST API to allow phone apps to update your Drupal 8 site with your user's GPS locations, and an interface in drupal to draw maps showing where they are.
 package: Location
 type: module
 core: 8.x
