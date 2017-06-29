@@ -58,8 +58,8 @@ class UserLocationRepository implements UserLocationRepositoryInterface {
         elseif(!is_float((double)$longitude) || !is_float((double)$latitude)){
             $message = "Location data must be a decimal data type 10, 7 precision";
         }
-        $response = ['message' => $message];
-        return new ResourceResponse($response);
+        return ['message' => $message];
+
     }
 
 }

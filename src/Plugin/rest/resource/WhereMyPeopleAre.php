@@ -84,7 +84,7 @@ class WhereMyPeopleAre extends ResourceBase {
   
   public function setRepoUserLocation(UserLocationRepositoryInterface $repoUserLocation)
   {
-      
+      $this->repoUserLocation = $repoUserLocation;
   }
  
   /**
