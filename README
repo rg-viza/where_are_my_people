@@ -15,7 +15,11 @@ Copyright 2017 Neil Paul Davis Jr
 ##    You should have received a copy of the GNU General Public License
 ##    along with Where are my people?.  If not, see <http://www.gnu.org/licenses/>.
 
+To Do: Move the calls to get data out of the user object out of the controllers, and into a service. (in progress)
+
 README
+Warning: I built this by day 4 of learning Drupal 8. I have Drupal 6/7 experience but Drupal 8 is a whole lot different, as far as coding goes :-) 
+
 Purpose: Enables updating a user location in drupal to show their location on a map. Designed to be used in conjunction with a Android or iPhone app that POSTs longitude and latitude at your drupal server's REST API (instructions below) to update a user's location
 
 Android app coming soon (or possibly a link to an existing android app)!
@@ -23,7 +27,7 @@ Android app coming soon (or possibly a link to an existing android app)!
 Step 1: Create new google maps API key at https://console.developers.google.com/apis/credentials and add it to templates/map.html.twig template replacing YOUR_GOOGLE_MAPS_API_KEY string with your key
 Step 2: git clone to ../modules/custom directory under web root of drupal
 Step 3: Enable "Where are my people?",  REST UI, RESTful Web services and Serialization modules in Drupal 8
-Step 4: Go to Configuration | Rest UI and enable API Routes. Select all checkboxes.
+Step 4: Go to Configuration | Rest UI and enable Where are my People? API Routes. Select all checkboxes.
 Step 5: Point location app at your server and send a json payload via POST such as:
 {
   "username":"admin",
